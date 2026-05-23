@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Machine Car Valeting | Professional Vehicle Valeting in Ashtead, Surrey</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0A0A0A;
+    --deep: #111111;
+    --carbon: #1C1C1C;
+    --silver: #C0C0C0;
+    --gold: #C9A84C;
+    --gold-light: #E2C97A;
+    --white: #F8F8F8;
+    --grey: #888888;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
+
+  nav a {
+    text-decoration: none;
+    color: rgba(248,248,248,0.55);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--white); }
+
+  .nav-cta {
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+    padding: 0.5rem 1.3rem;
+    border-radius: 1px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8rem 4rem 5rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+  }
+
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-since {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-since::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 600;
+    color: var(--white);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.3rem;
+    position: relative;
+  }
+
+  .hero-title-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 0.95;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    color: rgba(248,248,248,0.45);
+    font-weight: 300;
+    line-height: 1.85;
+    max-width: 480px;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 4rem;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--black);
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 1px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-outline-gold {
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 1px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-outline-gold:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .hero-credentials {
+    display: flex;
+    gap: 3rem;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .cred-item { }
+  .cred-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .cred-label {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: var(--grey);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+
+  /* MARQUEE */
+  .marquee-wrap {
+    background: var(--gold);
+    padding: 0.75rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-track {
+    display: inline-flex;
+    gap: 3rem;
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .marquee-item {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--black);
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .marquee-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(0,0,0,0.3); }
+
+  /* SERVICES */
+  .services {
+    padding: 8rem 4rem;
+    background: var(--deep);
+  }
+
+  .section-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 0.9rem;
+    color: var(--grey);
+    font-weight: 300;
+    line-height: 1.85;
+    max-width: 500px;
+    margin-bottom: 4rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .service-card {
+    background: var(--deep);
+    padding: 2.5rem 2rem;
+    transition: background 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  .service-card:hover { background: var(--carbon); }
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-icon { font-size: 2rem; margin-bottom: 1.2rem; display: block; }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--grey);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* HERITAGE */
+  .heritage {
+    padding: 8rem 4rem;
+    background: var(--black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7rem;
+    align-items: center;
+  }
+
+  .heritage-visual {
+    position: relative;
+  }
+
+  .heritage-box {
+    background: var(--carbon);
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 3.5rem;
+    border-radius: 1px;
+  }
+
+  .heritage-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem;
+    font-weight: 600;
+    color: rgba(201,168,76,0.12);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .heritage-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .client-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .client-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    color: rgba(248,248,248,0.5);
+    font-weight: 300;
+  }
+
+  .client-item::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .heritage-text p {
+    font-size: 0.92rem;
+    color: var(--grey);
+    line-height: 1.9;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+  }
+
+  .heritage-text p strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* PROCESS */
+  .process {
+    padding: 8rem 4rem;
+    background: var(--carbon);
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.04);
+    margin-top: 3.5rem;
+  }
+
+  .step {
+    background: var(--carbon);
+    padding: 2.5rem 2rem;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: rgba(201,168,76,0.15);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .step-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-desc {
+    font-size: 0.82rem;
+    color: var(--grey);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 8rem 4rem;
+    background: var(--deep);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .contact-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .contact-icon {
+    font-size: 1.1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: rgba(201,168,76,0.05);
+  }
+
+  .c-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .c-value {
+    font-size: 0.95rem;
+    color: var(--white);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .c-value a { color: var(--white); text-decoration: none; }
+
+  .contact-form-box {
+    background: var(--carbon);
+    border: 1px solid rgba(201,168,76,0.1);
+    padding: 2.5rem;
+  }
+
+  .form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group { margin-bottom: 1.1rem; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(248,248,248,0.35);
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.75rem 1rem;
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.88rem;
+    border-radius: 1px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group select option { background: var(--carbon); }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.15); }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--gold); }
+  .form-group textarea { height: 90px; resize: vertical; }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    padding: 0.9rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s, transform 0.15s;
+    border-radius: 1px;
+  }
+
+  .btn-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--white);
+    font-size: 1rem;
+  }
+
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 0.75rem; color: rgba(248,248,248,0.2); }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .d1 { animation-delay: 0.1s; }
+  .d2 { animation-delay: 0.25s; }
+  .d3 { animation-delay: 0.4s; }
+  .d4 { animation-delay: 0.55s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    .hero { padding: 6rem 1.5rem 4rem; }
+    .services { padding: 5rem 1.5rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .heritage { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
+    .process { padding: 5rem 1.5rem; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .contact { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Dream <span>Machine</span></div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#heritage">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:07831459253" class="nav-cta">07831 459253</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-lines"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-since fade-up">Established 1989 · Ashtead, Surrey</div>
+  <h1 class="hero-title fade-up d1">Professional</h1>
+  <h1 class="hero-title-italic fade-up d2">Vehicle Valeting.</h1>
+  <p class="hero-sub fade-up d3">
+    Expert hand car washing, mobile valeting, and specialist detailing for discerning vehicle owners across Ashtead and Surrey. Trusted by leading brands for over 35 years.
+  </p>
+  <div class="hero-actions fade-up d4">
+    <a href="tel:07831459253" class="btn-gold">Book a Valet</a>
+    <a href="#services" class="btn-outline-gold">View Services</a>
+  </div>
+  <div class="hero-credentials fade-up">
+    <div class="cred-item">
+      <div class="cred-val">35+</div>
+      <div class="cred-label">Years Experience</div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-val">100%</div>
+      <div class="cred-label">Hand Finished</div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-val">Mobile</div>
+      <div class="cred-label">We Come to You</div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-val">Insured</div>
+      <div class="cred-label">Fully Covered</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Chelsea FC <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Mercedes-Benz <span class="marquee-dot"></span></span>
+    <span class="marquee-item">BMW <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Volvo Trucks <span class="marquee-dot"></span></span>
+    <span class="marquee-item">RHS Wisley <span class="marquee-dot"></span></span>
+    <span class="marquee-item">NEC Motor Show <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Docklands Motor Show <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Racing Green Cars <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Chelsea FC <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Mercedes-Benz <span class="marquee-dot"></span></span>
+    <span class="marquee-item">BMW <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Volvo Trucks <span class="marquee-dot"></span></span>
+    <span class="marquee-item">RHS Wisley <span class="marquee-dot"></span></span>
+    <span class="marquee-item">NEC Motor Show <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Docklands Motor Show <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Racing Green Cars <span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <p class="section-label">What We Offer</p>
+  <h2 class="section-title">A Complete Valeting<br>Service</h2>
+  <p class="section-sub">Every vehicle treated with the same care and attention to detail that has made Dream Machine the trusted choice of leading car companies for over three decades.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🤲</span>
+      <h3 class="service-name">Hand Car Wash</h3>
+      <p class="service-desc">A thorough hand wash using premium products. No automated brushes — just careful, skilled hands and an eye for every last detail.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🚗</span>
+      <h3 class="service-name">Mobile Valeting</h3>
+      <p class="service-desc">We come to your home or place of work, fully self-sufficient with our own water and power supply. No tap or plug socket required.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">✨</span>
+      <h3 class="service-name">Hand Wax & Polish</h3>
+      <p class="service-desc">Hand-applied wax for a deep, lasting shine that protects your paintwork and keeps your car looking its very best for longer.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🪑</span>
+      <h3 class="service-name">Full Interior Valet</h3>
+      <p class="service-desc">Deep cleaning of seats, carpets, dashboard, and all interior surfaces. Leaving your cabin spotless, fresh, and as close to showroom as possible.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏆</span>
+      <h3 class="service-name">Show Preparation</h3>
+      <p class="service-desc">Specialist preparation for motor shows, dealer displays, and concours events. Trusted at the NEC, Docklands, and events across Europe.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📅</span>
+      <h3 class="service-name">Care & Maintenance Plans</h3>
+      <p class="service-desc">Regular valeting plans tailored to your vehicle and schedule. Keep your car immaculate year-round for one easy monthly arrangement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HERITAGE -->
+<section class="heritage" id="heritage">
+  <div class="heritage-visual">
+    <div class="heritage-box">
+      <div class="heritage-year">1989</div>
+      <div class="heritage-tagline">Trusted by the best.</div>
+      <p style="font-size:0.82rem; color: #666; font-weight:300; line-height:1.7; margin-bottom:1.5rem;">
+        Over 35 years of professional valeting, trusted by some of the most prestigious names in motoring and beyond.
+      </p>
+      <div class="client-list">
+        <div class="client-item">Chelsea Football Club</div>
+        <div class="client-item">Mercedes-Benz</div>
+        <div class="client-item">BMW — including charity events in France</div>
+        <div class="client-item">Volvo Trucks</div>
+        <div class="client-item">Racing Green Cars</div>
+        <div class="client-item">RHS Wisley</div>
+        <div class="client-item">NEC & Docklands Motor Shows</div>
+      </div>
+    </div>
+  </div>
+  <div class="heritage-text">
+    <p class="section-label">Our Story</p>
+    <h2 class="section-title">Over 35 Years of<br>Excellence</h2>
+    <p>Dream Machine has been providing <strong>professional vehicle valeting</strong> since 1989 — long before car detailing became fashionable. We built our reputation the old-fashioned way: exceptional results, every time, for every client.</p>
+    <p>Over the decades we've worked for <strong>major car manufacturers, Premier League football clubs, and prestige motor shows</strong> across the UK and Europe. That same standard of care is applied to every vehicle we work on today, regardless of size or budget.</p>
+    <p>We carry our own water and electric supply on board, so we can come to you <strong>wherever your vehicle is</strong> — at home, at work, or anywhere else in Ashtead and Surrey.</p>
+    <a href="#contact" class="btn-gold" style="display: inline-block; margin-top: 1.5rem;">Get in Touch</a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <p class="section-label">How It Works</p>
+  <h2 class="section-title">Simple from Start<br>to Finish</h2>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3 class="step-title">Get in Touch</h3>
+      <p class="step-desc">Call or email us to discuss your vehicle and what you need. We'll talk through the options and give you a clear, honest quote.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3 class="step-title">We Come to You</h3>
+      <p class="step-desc">We arrive at your home or workplace, fully equipped. No need to find a tap or power point — we bring everything we need.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3 class="step-title">Expert Valeting</h3>
+      <p class="step-desc">Your vehicle is cleaned by hand with professional products and careful attention to detail. Every inch, properly done.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3 class="step-title">Immaculate Result</h3>
+      <p class="step-desc">We don't leave until you're completely satisfied. Your vehicle handed back looking its very best.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Book Your Valet<br>Today</h2>
+    <p class="section-sub">Call us directly for the quickest response, or drop us a message and we'll get back to you promptly.</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <p class="c-label">Phone</p>
+          <p class="c-value"><a href="tel:07831459253">07831 459253</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <p class="c-label">Email</p>
+          <p class="c-value"><a href="mailto:dreamcarvalet@aol.com">dreamcarvalet@aol.com</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <p class="c-label">Based At</p>
+          <p class="c-value">142 Overdale, Ashtead<br>Surrey, KT21 1PX</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🗺️</div>
+        <div>
+          <p class="c-label">Coverage</p>
+          <p class="c-value">Ashtead · Leatherhead · Epsom<br>Fetcham · Cobham & surrounding Surrey</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form-box">
+    <h3 class="form-title">Request a Quote</h3>
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" placeholder="e.g. John Smith">
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" placeholder="e.g. 07700 900000">
+    </div>
+    <div class="form-group">
+      <label>Vehicle Type</label>
+      <input type="text" placeholder="e.g. BMW 3 Series, VW Golf">
+    </div>
+    <div class="form-group">
+      <label>Service Required</label>
+      <select>
+        <option value="">Select a service...</option>
+        <option>Hand Car Wash</option>
+        <option>Mobile Valet</option>
+        <option>Full Interior Valet</option>
+        <option>Hand Wax & Polish</option>
+        <option>Show Preparation</option>
+        <option>Maintenance Plan</option>
+        <option>Not Sure — Please Advise</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Anything Else?</label>
+      <textarea placeholder="Any additional details about your vehicle or requirements..."></textarea>
+    </div>
+    <button class="btn-submit">Send Enquiry</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Dream <span>Machine</span> Car Valeting</div>
+  <p class="footer-copy">© 2025 Dream Machine Car Valeting · Ashtead, Surrey · Est. 1989</p>
+</footer>
+
+</body>
+</html>
